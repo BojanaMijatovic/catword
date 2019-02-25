@@ -149,6 +149,19 @@ a {
     margin: 0 auto;
 }
 
+.brake {
+    position: fixed;
+    right: 5px;
+    bottom: 5px;
+}
+.brake:after {
+    content: "480px";
+    color: white;
+    display: block;
+    background-color: red;
+    padding: 5px 10px;
+}
+
 section {
     padding-top: 60px;
     padding-bottom: 60px;
@@ -372,8 +385,7 @@ nav .close span:nth-child(2) {
     background-color: #fff;
 }
 
-.verbal-text h3::after,
-.list-of-services h3::after {
+.verbal-text h3::after {
     content: '';
     display: block;
     width: 190px;
@@ -394,13 +406,26 @@ nav .close span:nth-child(2) {
     margin: 50px 0px;
     display: grid;
     grid-template-columns: 220px;
-    grid-template-rows: auto;
+    grid-template-rows: 310px;
     justify-items: center;
     justify-content: center; 
+    grid-gap: 20px;
+}
+
+.list-of-services h3::after {
+    content: '';
+    display: block;
+    width: 190px;
+    position: absolute;
+    border-top: 1px solid #939191;
+    margin-top: 10px;
+    left: 50%;
+    margin-left: -95px;
 }
 
 .written {
-    margin: 20px 0;
+    margin: 0;
+    padding: 0;
     background-color: #fff;
     padding: 20px 10px;
     justify-items: center;
@@ -434,6 +459,10 @@ nav .close span:nth-child(2) {
     height: 100%;
 }
 
+.text-area p {
+    font-size: 2em;
+}
+
 .two {
     display: none;
 }
@@ -454,6 +483,37 @@ nav .close span:nth-child(2) {
 }
 /* ===== END OBLASTI PREVODJENJA ======*/
 
+/* ====== STATISTICS ====== */
+.stats {
+    position: relative;
+    margin: 0;
+    height: auto;
+    background-image: url('../img/stats.png');
+    background-position: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
+
+.stats::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(47,47,69, 0.4);
+}
+
+.star {
+    width: 150px;
+    margin: 50px auto;
+    text-align: center;
+    color: #fff;
+}
+
+
 /* ====== KONTAKT ====== */
 .contact h2 {
     font-size: 4em;
@@ -464,6 +524,19 @@ nav .close span:nth-child(2) {
 }
 
 /* ====== MEDIA QUERIES ====== */
+@media only screen and (min-width: 400px) {
+    .hero {
+        height: 100vh;
+        background-image: url("../img/hero.png");
+        background-position: -200% -70%;
+        background-repeat: no-repeat;
+    }
+    .brake:after {
+        content: "400px";
+        background-color: red;
+    }
+}
+
 @media only screen and (min-width: 520px) {
     .icons {
         grid-template-columns: 120px 120px 120px 120px;
@@ -474,6 +547,10 @@ nav .close span:nth-child(2) {
     }
     .btn2 {
         margin-left: 0 auto;
+    }
+    .brake:after {
+        content: "500px";
+        background-color: red;
     }
 }
 
@@ -495,6 +572,55 @@ nav .close span:nth-child(2) {
     .service {
         grid-template-columns: 220px 220px;
         grid-gap: 20px;
+    }
+    .brake:after {
+        content: "768px";
+        background-color: red;
+    }
+    
+}
+
+@media only screen and  (min-width: 992px) {
+    .verbal-translation {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 0;
+        display: grid;
+        grid-template-columns: 55% 45%;
+        grid-template-rows: 500px;
+    }
+    .verbal-translation img {
+        height: 100%;
+    }
+    .verbal-text {
+        padding: 50px 30px;
+    }
+    .verbal-text h3 {
+        text-align: left;
+    }
+    .verbal-text p {
+        text-align: left;
+        padding: 0;
+    }
+    .verbal-text h3::after {
+        margin-left: 95px;
+    }
+
+    .list-of-services {
+
+    }
+    .text-area {
+        column-count: 2;
+        column-gap: 30px;
+    }
+
+    .verbal-text button {
+        margin-left: 0;
+        left: 0;
+    }
+    .brake:after {
+        content: "992px";
+        background-color: red;
     }
 }
 
@@ -534,24 +660,22 @@ nav .close span:nth-child(2) {
         display: none;
     }
 
-    .verbal-translation img {
-        height: 550px;
-    }
-
-    .verbal-translation {
-        width: 100%;
-        padding: 0;
-        margin-bottom: 0;
-    }
-
      .service {
         grid-template-columns: 220px 220px 220px;
+    }
+    .brake:after {
+        content: "1024px";
+        background-color: red;
     }
 }
 
 @media only screen and (min-width: 1300px) {
     .service {
         grid-template-columns: repeat(5, 220px);
+    }
+    .brake:after {
+        content: "1300px";
+        background-color: red;
     }
 }
 
