@@ -664,6 +664,7 @@ nav .close span:nth-child(2) {
 
 /* ====== FOOTER ====== */
 footer {
+    width: 100%;
     background: #2b2b2b;
     height: 100px;
 }
@@ -672,13 +673,12 @@ footer p {
     position: relative;
     top: 10px;
     left: 20px;
-    font-size: 1.8em;
+    font-size: 1.6em;
 }
 
 footer a {
     position: absolute;
-    padding-top: 10px;
-    right: 100px;
+    right: 50px;
 }
 
 
@@ -722,10 +722,13 @@ footer a {
     }
 
     footer p {
+        top: 30px;
         display: inline;
     }
+
     footer a {
-        right: 50px;
+        right: 100px;
+        padding-top: 20px;
     }
 
     .brake:after {
@@ -856,6 +859,10 @@ footer a {
 
     .contact-list {
         grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    footer a {
+        padding-right: 50px;
+        padding-top: 20px;
     }
     .brake:after {
         content: "992px";
