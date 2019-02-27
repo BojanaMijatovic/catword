@@ -681,6 +681,8 @@ footer a {
     right: 50px;
 }
 
+/* ====== ENF OF FOOTER ======/
+
 
 /* ====== MEDIA QUERIES ====== */
 @media only screen and (min-width: 400px) {
@@ -849,9 +851,13 @@ footer a {
     .text-right {
         padding-left: 30px;
     }
-    .text-right h2, h3, p{
+    .text-right h2 {
         text-align: left;
     }
+    .text-right h3 {
+        text-align: left;
+    }
+    
     .text-right button {
         left: 0;
         margin-left: 0;
@@ -874,6 +880,7 @@ footer a {
 @media only screen and (min-width: 1024px) {
     /* ===== HEADER ===== */
     header {
+        z-index: 9999;
         padding: 10px 0 10px;
     }
     .header-logo {
@@ -900,6 +907,7 @@ footer a {
     nav a.active,
     nav a:hover {
         color: #55557d;
+        font-weight: 700;
     }
 
     .burger, 
