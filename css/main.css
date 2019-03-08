@@ -283,7 +283,6 @@ nav .close span:nth-child(2) {
 .btn2 {    
     margin: 20px 0;
     left: 50%;
-    margin-left: -107px;
     font-size: 1.8em;
     font-weight: 400;
     padding: 20px;
@@ -364,7 +363,7 @@ nav .close span:nth-child(2) {
     flex-wrap: wrap;
     justify-content: center;
 }
-.one-lang, .serbian { 
+.one-lang { 
     max-height: 200px;
     max-width: 120px;
     display: inline-block;
@@ -376,8 +375,6 @@ nav .close span:nth-child(2) {
 
 .icons img {
     margin: 20px;
-    width: 80px;
-    height: 80px;
     border-radius: 50%;
     display: inline-block;
 }
@@ -385,6 +382,11 @@ nav .close span:nth-child(2) {
 .icons p {
     display: inline-block;
     text-align: center;
+}
+
+.language button {
+    margin-bottom: 30px;
+    margin-left: -117px;
 }
 
 /* ====== END OF JEZICI ===== */
@@ -397,7 +399,6 @@ nav .close span:nth-child(2) {
     background-color: #fff;
     text-align: center;
 }
-
 
 .verbal-text {
     text-align: left;
@@ -416,6 +417,10 @@ nav .close span:nth-child(2) {
 
 .verbal-text p {
     font-size: 2.2em;
+}
+
+.verbal-text button {
+    margin-left: -108px;
 }
 /* ====== END OF USMENO PREVODJENJE ====== */
 
@@ -441,23 +446,59 @@ nav .close span:nth-child(2) {
     margin-left: -95px;
 }
 
-.written {
+.service-card {
     margin: 0;
     padding: 0;
     background-color: #fff;
     padding: 20px 10px;
+    border-radius: 5px;
     justify-items: center;
     box-shadow: 7px 7px 21px  rgba(0, 0, 0, 0.22);
 }
 
-.written p {
+.service-card p {
     font-size: 1.6em;
     padding: 0 10px;
 }
 
-.written img {
+.service-card img {
     padding-left: 10px;
 }
+
+.service-card:hover {
+    background-color: #e217db;
+    opacity: 0.8;
+    transition: 0.5s ease-in;
+}
+
+.written:hover {
+    background-color: #e217db;
+}
+
+.lecture:hover {
+    background-color: #24e615;
+}
+
+.diploma:hover {
+    background-color: #e6e415;
+}
+
+.chat:hover {
+    background-color: #e63c15;
+}
+
+.redakt:hover {
+    background-color: #5515e6;
+}
+
+.service-card:hover h4 {
+    color: #fff;
+}
+
+.service-card:hover p {
+    color: #fff;
+}
+
 /* ====== END OF PREVODILACKE USLUGE =====*/
 
 /* ====== OBLASTI PREVODJENJA ======*/
@@ -636,6 +677,11 @@ nav .close span:nth-child(2) {
 .text-right {
     position: relative;
     max-width: 560px;
+}
+
+.text-right button {
+    padding: 20px 35px;
+    margin-left: -86px;
 }
 
 /* ====== END OF O NAMA ====== */
