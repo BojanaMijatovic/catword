@@ -172,6 +172,37 @@ img {
     height: auto;
 }
 
+.btn {
+    position: relative;
+    cursor: pointer;
+    font-size: 2em;
+    font-weight: 700;
+    color: #fff;
+    background-color: #55557d;
+    padding: 20px 50px;
+    border-radius: 10px;
+}
+
+.btn2 {    
+    margin: 20px 0;
+    left: 50%;
+    font-size: 1.8em;
+    font-weight: 400;
+    padding: 20px;
+}
+
+.btn:hover, .btn2:hover {
+    transition: all .5s;
+    background-color: #fff;
+    color: #3b3b3b;
+    border: 5px solid #55557d;
+    padding: 15px 45px;
+}
+
+.btn2:hover {
+    padding: 15px;
+}
+
 /* ====== HEADER ====== */
 header {
     padding: 13px 8px 20px 8px;
@@ -203,7 +234,7 @@ nav a {
     padding: 5px 5px;
 }
 
-nav .close {
+.close {
     width: 45px;
     height: 45px;
     position: absolute;
@@ -211,9 +242,10 @@ nav .close {
     right: 20px;
     display: block;
     margin: 0;
+    cursor: pointer;
 }
 
-nav .close span {
+.close span {
     width: 40px;
     height: 4px;
     background: #55557d;
@@ -221,7 +253,7 @@ nav .close span {
     transform: rotate(45deg);
 }
 
-nav .close span:nth-child(2) {
+.close span:nth-child(2) {
     transform: rotate(-45deg);
     position: relative;
     top: -4px;
@@ -270,36 +302,13 @@ nav .close span:nth-child(2) {
     clear: both;
 }
 
-.btn {
-    position: relative;
-    font-size: 2em;
-    font-weight: 700;
-    color: #fff;
-    background-color: #55557d;
-    padding: 20px 50px;
-    border-radius: 10px;
-}
-
-.btn2 {    
-    margin: 20px 0;
-    left: 50%;
-    font-size: 1.8em;
-    font-weight: 400;
-    padding: 20px;
-}
-
-.btn:hover {
-    background-color: #fff;
-    color: #3b3b3b;
-    border: 5px solid #55557d;
-}
 /* ====== END OF HEADER ======*/
 
 /* ====== HERO SECTION ======*/
 .hero {
-    height: 100%;
+    height: 100vh;
     background-image: url("../img/hero.png");
-    background-position: 20% -70%;
+    background-position: 10% -80%;
     background-repeat: no-repeat;
 }
 
@@ -461,14 +470,45 @@ nav .close span:nth-child(2) {
     padding: 0 10px;
 }
 
-.service-card img {
+.service-card svg {
+    display: inline;
+    height: 60px;
+    width: 50px;
     padding-left: 10px;
 }
 
+.written svg {
+    width: 120px;
+    height: 50px;
+}
+
+.written h4 {
+    padding-top: 10px;
+}
+
+.lecture svg {
+    fill: #24e615;
+}
+
+.diploma svg {
+    fill: #e6e415;
+}
+
+.chat svg {
+    fill: #e63c15;
+}
+
+.redakt svg {
+    fill: #5515e6;
+}
+
 .service-card:hover {
-    background-color: #e217db;
-    opacity: 0.8;
+    opacity: 0.7;
     transition: 0.5s ease-in;
+}
+
+.service-card:hover svg {
+    fill: #fff;
 }
 
 .written:hover {
@@ -643,6 +683,16 @@ nav .close span:nth-child(2) {
 .verbal-price ul{
     padding: 50px 20px 0px 20px;
 }
+
+.price-card:hover {
+    transition: all .5s ease-in;
+    background-color: #55557d;
+    color: #fff;
+}
+
+.price-card:hover h3, .price-card:hover p {
+    color: #fff;
+} 
 /* ====== END OF CENOVNIK ======*/
 
 /* ====== O NAMA ======*/
@@ -682,6 +732,10 @@ nav .close span:nth-child(2) {
 .text-right button {
     padding: 20px 35px;
     margin-left: -86px;
+}
+
+.text-right button:hover {
+    padding: 15px 30px;
 }
 
 /* ====== END OF O NAMA ====== */
@@ -745,14 +799,149 @@ footer a {
 /* ====== ENF OF FOOTER ======/
 
 
+/* ======= MODAL ====== */
+.modal {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgb(0, 0, 0, .5);
+}
+
+.modal_1 {
+    display: none;
+}
+
+.modal.open {
+    display: block;
+}
+
+.modal-wrap {
+    max-width: 650px;
+    max-height: 90%;
+    width: 90%;
+    padding: 20px;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow-y: auto;
+}
+
+.modal-wrap > * {
+    display: inline-block;
+}
+
+
+.modal-wrap .close span {
+    background-color: #d6d6d6;
+}
+
+.modal-wrap h4 {
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.modal-inner {
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+input {
+    border: 3px solid #d6d6d6;
+    border-radius: 5px;
+    width: 100%;
+    padding: 20px 15px;
+    margin-bottom: 20px;
+    font-size: 1.6em;
+}
+
+input::placeholder {
+    color: #939191;
+    font-size: 16px;
+    font-style: italic;
+}
+
+input:focus {
+    outline: none;
+    border-color: #55557d;
+}
+
+input.btn {
+    max-width: 300px;
+    border: none;
+    margin: 0 auto;
+    display: block;
+}
+
+ input[type="date"]:before,{
+    content: attr(placeholder) !important;
+    color: #d6d6d6;
+    font-style: italic;
+    margin-right: 0.5em;
+  }
+
+textarea, 
+pre {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0;
+}
+
+.expandingArea {
+    position: relative;
+    border: 3px solid #d6d6d6;
+    border-radius: 5px;
+    background: #fff;
+    margin-bottom: 20px;
+    min-height: 100px;
+}
+
+.expandingArea > textarea,
+.expandingArea > pre {
+    padding: 5px;
+    background: transparent;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.expandingArea > textarea {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100px;
+}
+
+.expandingArea.active > textarea {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    resize: none;
+}
+
+.expandingArea.active > textarea:focus{
+    outline: none;
+    border-color: #55557d;
+}
+
+.expandingArea > pre {
+    display: none;
+}
+
+.expandingArea.active pre {
+    display: block;
+    visibility: hidden;
+}
+
 /* ====== MEDIA QUERIES ====== */
+
 @media only screen and (min-width: 400px) {
-    .hero {
-        height: 100vh;
-        background-image: url("../img/hero.png");
-        background-position: -200% -70%;
-        background-repeat: no-repeat;
-    }
     .brake:after {
         content: "400px";
         background-color: red;
@@ -760,6 +949,7 @@ footer a {
 }
 
 @media only screen and (min-width: 520px) {
+
     .btn2 {
         margin-left: 0 auto;
     }
@@ -794,7 +984,23 @@ footer a {
     }
 }
 
+@media only screen and (min-width: 600px) {
+    .hero {
+        background-position: -250% -70%;
+    }
+}
+
+@media only screen and (min-width: 700px) {
+    .hero {
+        background-position: -800% -150%;
+    }
+}
+
 @media only screen and (min-width: 768px) {
+    .hero {
+        background-image: url(../img/hero2.png);
+        background-position: 700px 20%;
+    }
     .language p,
     .verbal-text p,
     .translation-areas p {
@@ -975,14 +1181,33 @@ footer a {
     }
 
     nav a {
+        position: relative;
         color: #2b2b2b;
         margin-left: 20px;
+        font-weight: 700;
     }
 
     nav a.active,
     nav a:hover {
+        transition: all .5s;
         color: #55557d;
-        font-weight: 700;
+    }
+
+    nav ul li a:after {
+        content: '.';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 0%;
+        color: transparent;
+        background-color: #55557d;
+        height: 1px;
+    }
+    nav a:hover:after {
+        transition: all .5s;
+        width: 100%;
     }
 
     .burger, 
