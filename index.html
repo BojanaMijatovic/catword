@@ -53,7 +53,7 @@
     <div class="hero-left">
       <h1>prevodilačka agencija <br><strong>prevođenje stručnih tekstova i overa dokumenata</strong></h1>
     </div>
-    <button class="btn">PITAJTE NAS</button>
+    <button href="javascript;" class="btn ask">PITAJTE NAS</button>
   </div>
   </section>
 
@@ -87,7 +87,7 @@
           <p>Srpski</p>
         </div>
       </div>
-    <button class="btn btn2">Pošaljite nam svoj tekst</button>
+    <button href="javascript;" class="btn btn2 send">Pošaljite nam svoj tekst</button>
     </div>
   </article>
 
@@ -97,7 +97,7 @@
         <div class="verbal-text">
         <h3>Usmeno prevođenje</h3>
         <p>Prilikom učenja stranog jezika najviše vremena i napora potebno je uložiti u govor. Progovoriti na stranom jeziku je izazov. Izazov koji su naši prevodioci savladali i spremni su da vam pomognu da ostvarite željenu komukicaciju.</p>
-        <button class="btn btn2">Unajmite prevodioca</button>
+        <button href="javascript;" class="btn btn2 hire">Unajmite prevodioca</button>
       </div>
     </article>
     <!-- PREVODILACKE USLUGE -->
@@ -487,18 +487,75 @@ WHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAABJRU5ErkJggg==" /></svg>
 
   <!-- MODAL -->
 
+  <!-- Modal 1 -->
   <div class="modal modal_1">
     <div class="modal-wrap text-center">
       <div class="modal-inner">
         <img src="img/logo.png" alt="catword logo">
         <h4>Pitajte nas</h4>
         <form>
-          <input type="text" name="firstname-surname" placeholder="Vaše ime i prezime" class="width_2">
+          <input type="text" name="firstname-surname" placeholder="Vaše ime i prezime">
           <input type="email" name="email" placeholder="Email adresa">
           <div class="expandingArea">
             <pre><span></span><br></pre>
-            <textarea></textarea>
+            <textarea>Vaša poruka</textarea>
           </div>
+          <input type="submit" value="Pošalji" class="btn">
+        </form>
+        <button class="close">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2 -->
+  <div class="modal modal_2">
+    <div class="modal-wrap text-center">
+      <div class="modal-inner">
+        <img src="img/logo.png" alt="catword logo">
+        <h4>Pošaljite nam svoj tekst</h4>
+        <form>
+          <input type="text" name="firstname-surname" placeholder="Vaše ime i prezime">
+          <input type="email" name="email" placeholder="Email adresa">
+          <div class="input-file">
+            <input type="file" name="file">
+            <p class="input-value">Priložite dokument</p>
+          </div>
+          <input type="submit" value="Pošalji" class="btn">
+        </form>
+        <button class="close">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3 -->
+   <div class="modal modal_3">
+    <div class="modal-wrap text-center">
+      <div class="modal-inner">
+        <img src="img/logo.png" alt="catword logo">
+        <h4>Unajmite prevodioca</h4>
+        <form>
+          <input list="languages" name="languages" placeholder="Unesite naziv jezika">
+          <datalist id="languages">
+            <option value="Engleski">
+            <option value="Nemаčki">
+            <option value="Ruski">
+            <option value="Srpski">
+            <option value="Francuski">
+          </datalist>
+          <input list="type-of-translation" name="type-of-translation" placeholder="Vrsta prevoda" class="width_2 type_2">
+          <datalist id="type-of-translation">
+            <option value="Konsekutivno">
+            <option value="Simultano">
+          </datalist>
+          <input type="date" name="res-date" placeholder="Select date:" class="width_2 date_2">
+          <input type="text" name="firstname-surname" placeholder="Vaše ime i prezime">
+          <input type="email" name="email" placeholder="Email adresa">
           <input type="submit" value="Pošalji" class="btn">
         </form>
         <button class="close">
