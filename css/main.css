@@ -332,6 +332,9 @@ nav a {
 .services {
     background-color: #fafafa;
 }
+.services h2 {
+    margin-top: 0;
+}
 .services h2::after,
 .text-right h2::after {
     content: '';
@@ -486,6 +489,10 @@ nav a {
     padding-top: 10px;
 }
 
+.written svg {
+    fill: #e217db;
+}
+
 .lecture svg {
     fill: #24e615;
 }
@@ -566,7 +573,7 @@ nav a {
     display: none;
 }
 
-.circles {
+/*.circles {
     position: relative;
     text-align: center;
     padding-top: 20px;
@@ -580,7 +587,7 @@ nav a {
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.6s ease;
-}
+}*/
 /* ===== END OBLASTI PREVODJENJA ======*/
 
 /* ====== STATISTICS ====== */
@@ -824,7 +831,7 @@ footer a {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .modal-wrap > * {
@@ -856,7 +863,8 @@ input {
     font-size: 1.6em;
 }
 
-input::placeholder {
+input::placeholder,
+textarea::placeholder {
     color: #939191;
     font-size: 16px;
     font-style: italic;
@@ -865,6 +873,7 @@ input::placeholder {
 input:focus {
     outline: none;
     border-color: #55557d;
+    box-shadow: 7px 7px 21px  rgba(0, 0, 0, 0.22);
 }
 
 input.btn {
@@ -898,6 +907,12 @@ pre {
     background: #fff;
     margin-bottom: 20px;
     min-height: 100px;
+}
+
+.expandingArea:focus-within,
+.input-file:focus-within {
+    border: 3px solid #55557d;
+    box-shadow: 7px 7px 21px  rgba(0, 0, 0, 0.22);
 }
 
 .expandingArea > textarea,
@@ -944,17 +959,19 @@ pre {
     z-index: 1;
     margin-left: 10px;
     margin-bottom: 20px;
+    z-index: 1;
 }
+
 .input-file:after {
     position: absolute;
     top: 15px;
     right: 15px;
     margin: 0;
     padding: 0;
-    content: "\128206";
+    content: url('../img/paperclip.jpg');
     font-size: 2.4em;
-    font-style: 'icons';
     color: #4d4d4d;
+    z-index: -3;
 }
 .input-file > input[type="file"] {
     border: none;
@@ -964,7 +981,7 @@ pre {
     z-index: 4;
 }
 
-.input-file > p {
+.input-file > span {
     position: absolute;
     top: 20px;
     left: 15px;
@@ -972,6 +989,7 @@ pre {
     padding: 0;
     font-size: 16px;
     font-style: italic;
+    z-index: -3;
 }
 
 /* ======= END OF MODAL ======= */
@@ -1121,7 +1139,8 @@ pre {
         padding-left: 0;
     }
     .verbal-text h3::after,
-    .text-right h2::after {
+    .text-right h2::after,
+    .translation-areas h2::after {
         margin-left: auto;
         left: auto;
     }
@@ -1129,6 +1148,11 @@ pre {
     .list-of-services {
         padding-top: 50px;
     }
+
+    .translation-areas h2 {
+        text-align: left;
+    }
+
     .text-area {  
         padding: 40px 70px;
         position: relative;
@@ -1155,7 +1179,7 @@ pre {
     .text p {
         padding-left: 0;
     }
-    .text-area img {
+    .flexslider .slides img {
         display: inline;
         width: 50%;
         height: 500px;
