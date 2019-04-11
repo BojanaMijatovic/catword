@@ -21,6 +21,23 @@ var l = areas.length;while (l--) {
 makeExpandingArea(areas[l]);
 }
 
+// MOBILE NAVIGATION 
+$('.burger').on('click', function(event) {
+  event.preventDefault();
+  $('.nav').css('display', 'table');
+  $('.burger').css('display','none');
+});
+$('.nav .close').on('click', function(event) {
+  event.preventDefault();
+  $('.nav').css('display', 'none');
+  $('.burger').css('display','block');
+});
+
+$('.nav a').on('click', function(event) {
+  $('.nav a').removeClass('active');
+  $(this).addClass('active');
+})
+
 // MODAL
 $('.ask').on('click', function(event) {
 	event.preventDefault();
@@ -108,5 +125,7 @@ $('a[href*="#"]')
 $(window).on("load", function() {
   $('.flexslider').flexslider({
     animation: "slide",
+    prevText: "",
+    nextText: ""
   });
 });

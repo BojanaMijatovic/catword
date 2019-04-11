@@ -102,7 +102,7 @@ textarea {
 }
 
 body {
-    font-size: 62.5%;
+    font-size: 37.2%;
     font-weight: 400;
     color: #939191;
     font-family: 'Quicksand', sans-serif;
@@ -117,6 +117,7 @@ h2, h3, h4 {
 }
 
 h2 {
+    position: relative;
     font-size: 4.8em;
     font-weight: 700;
     color: #55557d;
@@ -126,6 +127,7 @@ h3 {
     font-size: 3.6em;
     font-weight: 500;
     color: #2b2b2b;
+    position: relative;
 }
 
 h4 {
@@ -140,6 +142,10 @@ p {
 
 a {
     text-decoration: none;
+}
+
+section {
+    padding-bottom: 50px;
 }
 
 .container {
@@ -162,10 +168,13 @@ a {
     padding: 5px 10px;
 }
 
-section {
-    padding-top: 60px;
-    padding-bottom: 60px;
+.unstyle-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
+
+
 
 img {
     max-width: 100%;
@@ -178,35 +187,46 @@ img {
     font-size: 2em;
     font-weight: 700;
     color: #fff;
-    background-color: #55557d;
+    background-color: #ff3b5d;
     padding: 20px 50px;
     border-radius: 10px;
 }
 
 .btn2 {    
-    margin: 20px 0;
-    left: 50%;
+    margin: 20px auto;
+    display: block;
     font-size: 1.8em;
     font-weight: 400;
     padding: 20px;
+    background-color: #55557d; 
 }
 
-.btn:hover, .btn2:hover {
+.btn:hover {
     transition: all .5s;
     background-color: #fff;
     color: #3b3b3b;
-    border: 5px solid #55557d;
+    border: 5px solid #ff3b5d;
     padding: 15px 45px;
 }
 
 .btn2:hover {
     padding: 15px;
+    border: 5px solid #55557d;
 }
 
 /* ====== HEADER ====== */
 header {
+    width: 100%;
+    position: fixed;
+    background: #fff;
     padding: 13px 8px 20px 8px;
     box-shadow: 7px 7px 21px  rgba(0, 0, 0, 0.22); 
+    z-index: 20;
+}
+
+header .container {
+    padding-left: 0;
+    padding-right: 0;
 }
 
 nav {
@@ -306,19 +326,28 @@ nav a {
 
 /* ====== HERO SECTION ======*/
 .hero {
-    height: 100vh;
-    background-image: url("../img/hero.png");
-    background-position: 10% -80%;
+    padding-top: 60px;
+    padding-bottom: 0;
+    background-image: url("../img/hero1.svg");
     background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero .container {
+    background-color: rgba(255, 217, 146, .5);
+
 }
 
 .hero-left {
-    max-width: 600px;
-    margin: 150px 0 auto;
+    max-width: 500px;
+    padding-top: 150px;
+    padding-bottom: 50px;
+    padding-left: 15px;
 }
 
 .hero-left h1 {
-    font-size: 2.4em;
+    color: #000;
     font-weight: 400;
 }
 
@@ -330,13 +359,15 @@ nav a {
 
 /* ====== NASE USLUGE ===== */
 .services {
+    padding-top: 30px;
     background-color: #fafafa;
 }
 .services h2 {
     margin-top: 0;
 }
 .services h2::after,
-.text-right h2::after {
+.text-right h2::after,
+.price h2:after {
     content: '';
     display: block;
     width: 110px;
@@ -351,16 +382,7 @@ nav a {
 /* ===== JEZICI ====== */
 .language {
     height: 100%;
-}
-.language h3::after {
-    content: '';
-    display: block;
-    width: 50px;
-    position: absolute;
-    border-top: 1px solid #939191;
-    margin-top: 10px;
-    left: 50%;
-    margin-left: -25px;
+    padding-bottom: 50px ;
 }
 
 .language p {
@@ -369,36 +391,33 @@ nav a {
 
 .icons {
     max-height: auto;
-    margin: 100px 0px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
 }
 .one-lang { 
-    max-height: 200px;
+    height: auto;
     max-width: 120px;
     display: inline-block;
     text-align: center;
 }
+
 .big-ben, .moscow, .eiffel, .cathedral, .museum {
     display: inline;
 }
 
 .icons img {
-    margin: 20px;
+    margin: 20px 20px 15px 20px;
     border-radius: 50%;
     display: inline-block;
 }
 
 .icons p {
     display: inline-block;
+    margin-top: 0;
     text-align: center;
-}
-
-.language button {
-    margin-bottom: 30px;
-    margin-left: -117px;
+    padding: 15px;
 }
 
 /* ====== END OF JEZICI ===== */
@@ -406,10 +425,24 @@ nav a {
 /* ====== USMENO PREVODJENJE ===== */
 .verbal-translation {
     width: 100%;
-    margin: 50px 0;
-    padding: 50px 15px;
     background-color: #fff;
     text-align: center;
+    padding-bottom: 50px;
+}
+
+.image {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 84.25%;
+    overflow: hidden;
+}
+
+.image img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .verbal-text {
@@ -430,18 +463,14 @@ nav a {
 .verbal-text p {
     font-size: 2.2em;
 }
-
-.verbal-text button {
-    margin-left: -108px;
-}
 /* ====== END OF USMENO PREVODJENJE ====== */
 
 /* ====== PREVODILACKE USLUGE ======= */
 .service {
-    margin: 50px 0px;
+    margin: 40px 0px 0px;
     display: grid;
-    grid-template-columns: 220px;
-    grid-template-rows: 310px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
     justify-items: center;
     justify-content: center; 
     grid-gap: 20px;
@@ -460,7 +489,6 @@ nav a {
 
 .service-card {
     margin: 0;
-    padding: 0;
     background-color: #fff;
     padding: 20px 10px;
     border-radius: 5px;
@@ -468,8 +496,14 @@ nav a {
     box-shadow: 7px 7px 21px  rgba(0, 0, 0, 0.22);
 }
 
+.service-card h4 {
+    font-size: 3em;
+    text-align: left;
+    margin-left: 10px;
+}
+
 .service-card p {
-    font-size: 1.6em;
+    font-size: 2.1em;
     padding: 0 10px;
 }
 
@@ -510,7 +544,7 @@ nav a {
 }
 
 .service-card:hover {
-    opacity: 0.7;
+    opacity: 0.9;
     transition: 0.5s ease-in;
 }
 
@@ -519,23 +553,24 @@ nav a {
 }
 
 .written:hover {
-    background-color: #e217db;
+    background-color: #db8ad8;
 }
 
 .lecture:hover {
-    background-color: #24e615;
+    background-color: #8fdc89;
 }
 
 .diploma:hover {
-    background-color: #e6e415;
+    opacity: 0.7;
+    background-color: #dec44a;
 }
 
 .chat:hover {
-    background-color: #e63c15;
+    background-color: #dc9889;
 }
 
 .redakt:hover {
-    background-color: #5515e6;
+    background-color: #a289dc;
 }
 
 .service-card:hover h4 {
@@ -549,6 +584,11 @@ nav a {
 /* ====== END OF PREVODILACKE USLUGE =====*/
 
 /* ====== OBLASTI PREVODJENJA ======*/
+
+.translation-areas {
+    padding-bottom: 60px;
+}
+
 .translation-areas h2::after {
     content: '';
     display: block;
@@ -560,11 +600,24 @@ nav a {
     margin-left: -128px;
 }
 
-.translation-areas img {
+.image_2 {
+    position: relative;
     width: 100%;
-    height: 100%;
+    height: 0;
+    padding-bottom: 84.25%;
+    overflow: hidden;
 }
 
+.image_2 img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.text {
+    height: 200px;
+}
 .text-area p {
     font-size: 2em;
 }
@@ -572,27 +625,12 @@ nav a {
 .two {
     display: none;
 }
-
-/*.circles {
-    position: relative;
-    text-align: center;
-    padding-top: 20px;
-}
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 20px 0;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}*/
 /* ===== END OBLASTI PREVODJENJA ======*/
 
 /* ====== STATISTICS ====== */
 .stats {
     position: relative;
+    padding-top: 30px;
     margin: 0;
     height: auto;
     background-image: url('../img/stats.png');
@@ -602,6 +640,14 @@ nav a {
     z-index: -12;
 }
 
+.crown {
+     display: grid;
+     grid-template-columns: 150px 150px;
+     grid-template-rows: auto;
+     justify-content: center;
+     justify-items: center;
+     grid-gap: 20px;
+    }
 .stats:after {
     position: absolute;
     content: '';
@@ -615,8 +661,8 @@ nav a {
 
 .star {
     width: 150px;
-    height: 190px;
-    margin: 20px auto;
+    height: 150px;
+    margin: 0 auto;
     text-align: center;
     color: #fff;
     z-index: 33;
@@ -625,23 +671,13 @@ nav a {
 
 /* ====== CENOVNIK ====== */
 .price {
+    padding-top: 20px;
     background-color: rgba(41, 10, 89, 0.3);
-}
-.price h2::after,
-.price h3::after {
-    content: '';
-    display: block;
-    width: 110px;
-    position: relative;
-    border-top: 1px solid #939191;
-    margin-top: 10px;
-    left: 50%;
-    margin-left: -55px;
 }
 
 .price p {
     display: inline-block;
-    font-size: 1.8em;
+    font-size: 16px;
 }
 .price-list {
     display: grid;
@@ -669,26 +705,22 @@ nav a {
     font-weight: 500;
     margin: 0;
     display: inline;
-    padding-right: 15px;
+    padding-right: 90px;
 }
 .price-list .price-card span {
     position: absolute;
     top: 0;
     right: 0;
-    font-size: 1.8em;
+    font-size: 14px;
     padding-right: 15px;
 }
 
 .written-price {
     position: relative;
-    max-height: 500px;
-    margin-top: 20px;
-}
-.verbal-price  {
-    padding-bottom: 150px;
+    max-height: 400px;
 }
 .verbal-price ul{
-    padding: 50px 20px 0px 20px;
+    padding: 50px 10px 0px 10px;
 }
 
 .price-card:hover {
@@ -704,6 +736,7 @@ nav a {
 
 /* ====== O NAMA ======*/
 .about {
+    padding-top: 50px;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
@@ -715,30 +748,46 @@ nav a {
     display: none; 
 }
 .animation {
-    margin: 0;
     position: relative;
     width: 100%;
-    height: 100%;
-    max-width: 500px;
-    max-height: 465px;
-    background-color: #fafafa;
-    border-radius: 50%;
+    height: 0;
+    padding-bottom: 56.25%;
+    overflow: hidden;
+
 }
+
+.animation svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-49%, -36%);
+}
+
+
 .first {
     display: block;
     position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 100px 0;
+    margin: 0 auto;
+    padding: 50px 0;
 }
 .text-right {
     position: relative;
     max-width: 560px;
 }
 
+.hidden-text{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.show {
+    display: block;
+}
+
 .text-right button {
+    background-color: #ff3b5d;
     padding: 20px 35px;
-    margin-left: -86px;
 }
 
 .text-right button:hover {
@@ -749,37 +798,65 @@ nav a {
 
 
 /* ====== KONTAKT ====== */
+.contact {
+    padding-bottom: 0;
+}
 .contact h2 {
     font-size: 4em;
     color: #2b2b2b;
 }
 
-.contact p {
+.contact li {
     text-align: center;
-    font-size: 1.6em;
-    padding-bottom: 40px;
+    font-size: 12px;
 }
 
+.contact li {
+    display: inline-block;
+    padding: 0 10px 10px;
+    margin: auto;
+    min-width: 300px;
+    max-width: 300px;
+}
+
+.contact li:nth-child(4){
+    text-align: left;
+}
 
 .contact-list {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+    margin: 0 auto;
 }
-.contact li {
-    padding: 50px 20px 20px 20px;
-    text-align: center;
-}
-
-.social-net li {
-    display: inline;
-    padding: 0;
-   padding-right: 10px;
+.contact-list li {
+    display: inline-block;
+    position: relative;
+    margin: 10px auto;
+    height: 80px;
+    padding-left: 70px;
+    padding-bottom: 50px;
+    overflow: hidden;
 }
 
-.social-net {
+.contact-list li img {
+    display: block;
+    float: left;
+    position: absolute;
+    top: 0;
+    left: 20px;
+
+}
+
+.contact-list .social-net li {
     display: inline;
+    padding-left: 20px;
+}
+
+.contact-list .social-net li a{
+    display: inline;
+    padding: 15px;
+}
+
+.contact-list .social-net li a img {
+    left: 0;
 }
 /* ======= END OF KONTAKT ======*/
 
@@ -812,7 +889,7 @@ footer a {
     position: fixed;
     width: 100%;
     height: 100%;
-    top: 0;
+    top: 50px;
     left: 0;
     background-color: rgb(0, 0, 0, .5);
 }
@@ -873,7 +950,7 @@ textarea::placeholder {
 input:focus {
     outline: none;
     border-color: #55557d;
-    box-shadow: 7px 7px 21px  rgba(0, 0, 0, 0.22);
+    box-shadow: 7px 7px 21px  rgba(85, 85, 125, 0.3);
 }
 
 input.btn {
@@ -881,6 +958,11 @@ input.btn {
     border: none;
     margin: 0 auto;
     display: block;
+    background-color: #55557d; 
+}
+
+input.btn:hover {
+    border-color: #55557d;
 }
 
  input[type="date"]:before,{
@@ -912,7 +994,7 @@ pre {
 .expandingArea:focus-within,
 .input-file:focus-within {
     border: 3px solid #55557d;
-    box-shadow: 7px 7px 21px  rgba(0, 0, 0, 0.22);
+    box-shadow: 7px 7px 21px  rgba(85, 85, 125, 0.3);
 }
 
 .expandingArea > textarea,
@@ -952,12 +1034,9 @@ pre {
 /* ==== Modal 3 ===== */
 .input-file {
     position: relative;
-    max-width: 450px;
-    width: 100%;
     border: 3px solid #d6d6d6;
     border-radius: 5px;
     z-index: 1;
-    margin-left: 10px;
     margin-bottom: 20px;
     z-index: 1;
 }
@@ -1004,24 +1083,23 @@ pre {
 }
 
 @media only screen and (min-width: 520px) {
-
+    .hero-left {
+    padding-bottom: 250px;
+    }
     .btn2 {
         margin-left: 0 auto;
     }
-
-    /* ====== STATS ====== */
-    .crown {
-        display: grid;
-        grid-template-columns: 200px 200px;
-        grid-template-rows: auto;
-        justify-content: center;
-        justify-items: center;
+    .service {
+        grid-template-columns: 1fr 1fr;
         grid-gap: 20px;
     }
-    /* ====== KONTAKT ====== */
-    .contact-list {
-        grid-template-columns: 1fr 1fr;
+    .language p {
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 20px 0;
+        text-align: center;
     }
+
     /* ====== FOOTER ====== */
     footer p {
         top: 30px;
@@ -1040,117 +1118,70 @@ pre {
     }
 }
 
-@media only screen and (min-width: 600px) {
-    .hero {
-        background-position: -250% -70%;
-    }
-}
-
-@media only screen and (min-width: 700px) {
-    .hero {
-        background-position: -800% -150%;
-    }
-}
-
 @media only screen and (min-width: 768px) {
     .hero {
-        background-image: url(../img/hero2.png);
-        background-position: 650px 20%;
+        background-position: 50% 50%;
     }
-    .language p,
-    .verbal-text p,
+
     .translation-areas p {
         text-align: center;
         padding: 0 20px;
     }
-    /* ====== PREVODILACKE USLUGE ====== */
-    .service {
-        grid-template-columns: 220px 220px;
-        grid-gap: 20px;
-    }
 
-    .written-list {
-        height: 500px;
-    }
-
-    /* ====== MODALS ===== */
-
-    .modal_2 input  {
-        margin-left: 10px;
-        margin-right: 10px;
-        width: calc(100% - 22px);
-    }
-
-    .modal_2 input.btn {
-        margin: 0 auto;
-    }
-
-    input.width_2  {
-        width: calc(50% - 9px);
-      }
-
-    input.type_2  {
-        margin-right: 15px;
-      }
-
-    input.date_2 {
-        padding: 17px;
-    }
-
-    .brake:after {
-        content: "768px";
-        background-color: red;
-    }
-    
-}
-
-@media only screen and  (min-width: 992px) {
-    .verbal-translation {
+    /* ==== USMENO PREVODJENJE ===== */
+     .verbal-translation {
         position: relative;
-        height: 550px;
         text-align: left;
         margin: 0;
         padding: 0;
     }
-    .verbal-translation img {
-        float: left;    
-        display: inline;
-        max-width: 50%;
-        height: 100%;
-        position: relative;
-        text-align: left;
+
+    .verbal-translation .container {
+    padding-left: 0;
+}
+    .image {
+        display: block;
+        float: left;
+        width: 50%;
+        padding-bottom: 39.25%;
     }
     .verbal-text {
+        display: inline-block;
         position: absolute;
-        display: inline;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%);
+        text-align: left;
         min-width: 300px;
-        max-width: 650px;
-        max-height: 400px;
-        padding: 100px 0 0 80px;
+        max-width: 600px;
+        padding-left: 50px;
     }
     .verbal-text h3 {
         display: inline-block;
         text-align: left;
     }
     .verbal-text p {
-        position: relative;
-        display: inline-block;
+        display: inlin-block;
         text-align: left;
         padding-left: 0;
     }
+
+    /* ====== PREVODILACKE USLUGE ====== */
+    .service {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 20px;
+    }
+
+    /*===== OBLASTI PREVODJENJA ======= */
+    .translation-areas h2 {
+        text-align: left;
+    }
+
     .verbal-text h3::after,
-    .text-right h2::after,
+    .text-right h2::after, 
     .translation-areas h2::after {
         margin-left: auto;
         left: auto;
-    }
-
-    .list-of-services {
-        padding-top: 50px;
-    }
-
-    .translation-areas h2 {
-        text-align: left;
     }
 
     .text-area {  
@@ -1181,9 +1212,11 @@ pre {
     }
     .flexslider .slides img {
         display: inline;
+    }
+
+    .image_2 {
         width: 50%;
-        height: 500px;
-        transform: translateY(10%);
+        padding-bottom: 40.25%;
     }
 
     .verbal-text button {
@@ -1191,14 +1224,100 @@ pre {
         left: 0;
     }
 
-    .crown {
-        grid-template-columns: repeat(4, 200px);
-        justify-content: space-between;
+
+    /*===== O NAMA ===== */
+    .about {
+        grid-template-columns: 1fr 1fr;
+    }
+    .animation {
+        padding-bottom: 80.25%;
+    }
+    .text-right {
+        padding-left: 30px;
+    }
+    .text-right h2 {
+        text-align: left;
+    }
+    .text-right h3 {
+        text-align: left;
+    }
+    
+    .text-right button {    
+        margin-left: 0;
     }
 
     .price-list {
-        grid-template-columns: 400px 400px;
+        grid-template-columns: 1fr 1fr;
     }
+
+    /* ====== MODALS ===== */
+
+    .modal_2 input  {
+        margin-left: 10px;
+        margin-right: 10px;
+        width: calc(100% - 22px);
+    }
+
+    .modal_2 input.btn {
+        margin: 0 auto;
+    }
+
+    input.width_2  {
+        width: calc(50% - 9px);
+      }
+
+    input.type_2  {
+        margin-right: 15px;
+      }
+
+    input.date_2 {
+        padding: 17px;
+    }
+
+    .input-file  {
+        width: calc(100% - 22px);
+        margin-left: 10px;
+    }
+
+    .brake:after {
+        content: "768px";
+        background-color: red;
+    }
+    
+}
+
+@media only screen and (min-width: 800px) {
+    .hero {
+        padding-top: 80px;
+        background-position: right;
+        background-size: 60%;
+    }
+
+    .hero div:first-of-type {
+        background-color: transparent;
+    }
+    .crown {
+        grid-template-columns: repeat(4, 200px);
+        justify-content: space-around;
+    }
+}
+
+@media only screen and  (min-width: 992px) {
+    .verbal-text h3::after,
+    .text-right h2::after, {
+        margin-left: auto;
+        left: auto;
+    }
+
+    .list-of-services {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .translation-areas {
+        padding-bottom: 80px
+    }
+
     .written-price {
         width: 360px;
     }
@@ -1214,28 +1333,10 @@ pre {
     z-index: 4;
 }
     .verbal-price  {
-    padding-bottom: 220px;
+    padding-bottom: 0px;
 }
-    .about {
-        grid-template-columns: 1fr 1fr;
-    }
-    .text-right {
-        padding-left: 30px;
-    }
-    .text-right h2 {
-        text-align: left;
-    }
-    .text-right h3 {
-        text-align: left;
-    }
-    
-    .text-right button {
-        left: 0;
-        margin-left: 0;
-    }
-
     .contact-list {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        justify-content: center;
     }
     .brake:after {
         content: "992px";
@@ -1247,7 +1348,6 @@ pre {
 @media only screen and (min-width: 1024px) {
     /* ===== HEADER ===== */
     header {
-        z-index: 9999;
         padding: 10px 20px 10px;
     }
     .header-logo {
@@ -1302,7 +1402,30 @@ pre {
     }
 
      .service {
-        grid-template-columns: 220px 220px 220px;
+        grid-template-columns: 220px 220px 220px 220px;
+    }
+
+    .star {
+        height: 190px;
+        margin: 20px auto;
+    }
+      /* ===== CENOVNIK =====*/
+
+     .price-list {
+        grid-template-columns: 400px 400px;
+    }
+    .verbal-price {
+    width: 340px;
+    max-height: 400px;
+}
+
+    .contact {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .contact-list {
+        padding-top: 50px;
     }
     .brake:after {
         content: "1024px";
@@ -1311,15 +1434,44 @@ pre {
 }
 
 @media only screen and (min-width: 1300px) {
+    body {
+        font-size: 62.25%;
+    }
+    section {
+        padding-top: 50px;
+    }
     .service {
         grid-template-columns: repeat(5, 220px);
+    }
+
+    .service-card h4 {
+        font-size: 1.8em;
+    }
+    .service-card p {
+        font-size: 1.6em;
     }
     .brake:after {
         content: "1300px";
         background-color: red;
     }
+    
+    .price {
+        padding-bottom: 80px;
+    }
     .price-list {
         grid-template-columns: 400px 400px 400px;
+    }
+
+    .written-price {
+        margin-top: 60px;
+    }
+
+    .hero-left {
+        max-width: 690px;
+    }
+
+    .hero-left h1 {
+        font-size: 4em;
     }
 }
 
@@ -1334,11 +1486,7 @@ pre {
 /* ==========================================================================
    Helper classes
    ========================================================================== */
-.unstyle-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
+
 .text-center {
     text-align: center;
 }
