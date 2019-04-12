@@ -27,7 +27,7 @@ $('.burger').on('click', function(event) {
   $('.nav').css('display', 'table');
   $('.burger').css('display','none');
 });
-$('.nav .close').on('click', function(event) {
+$('.nav .close, .nav a').on('click', function(event) {
   event.preventDefault();
   $('.nav').css('display', 'none');
   $('.burger').css('display','block');
@@ -36,7 +36,8 @@ $('.nav .close').on('click', function(event) {
 $('.nav a').on('click', function(event) {
   $('.nav a').removeClass('active');
   $(this).addClass('active');
-})
+});
+
 
 // MODAL
 $('.ask').on('click', function(event) {

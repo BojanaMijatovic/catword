@@ -240,6 +240,7 @@ nav {
     text-align: center;
     color: #fff;
     opacity: 0.9;
+    transition: all .5s;
 }
 
 nav ul {
@@ -792,6 +793,7 @@ nav a {
 
 .text-right button:hover {
     padding: 15px 30px;
+    border-color: #ff3b5d;
 }
 
 /* ====== END OF O NAMA ====== */
@@ -1354,7 +1356,7 @@ pre {
         padding: 10px 0;
     }
     nav {
-        display: block;
+        display: block !important ;
         position: initial;
         width: auto;
         height: auto;
@@ -1398,7 +1400,7 @@ pre {
 
     .burger, 
     nav .close {
-        display: none;
+        display: none !important;
     }
 
      .service {
