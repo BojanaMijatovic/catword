@@ -263,7 +263,6 @@ nav a {
     right: 20px;
     display: block;
     margin: 0;
-    cursor: pointer;
 }
 
 .close span {
@@ -761,7 +760,7 @@ nav a {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-49%, -36%);
+    transform: translate(-49%, -28%);
 }
 
 
@@ -801,19 +800,59 @@ nav a {
 
 /* ====== KONTAKT ====== */
 .contact {
-    padding-bottom: 0;
+    padding-bottom: 20px;
 }
 .contact h2 {
     font-size: 4em;
     color: #2b2b2b;
 }
 
-.contact li {
+.contact li p {
     text-align: center;
     font-size: 12px;
 }
 
-.contact li {
+.contact-list {
+    max-width: 600px;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 20px auto;
+}
+
+.contact-list li {
+    position: relative;
+    width: 250px;
+    margin-top: 10px;
+    height: 60px;
+}
+
+.contact-list li p {
+    text-align: left;
+    padding-left: 27%;
+    margin-top: 0;
+}
+
+.contact-list li::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+}
+
+.contact_1::before {
+    content: url(../img/icon1.png);
+}
+.contact_2::before {
+    content: url(../img/icon2.png);
+}
+.contact_3::before {
+    content: url(../img/icon3.png);
+}
+
+/*.contact li {
     display: inline-block;
     padding: 0 10px 10px;
     margin: auto;
@@ -845,20 +884,22 @@ nav a {
     top: 0;
     left: 20px;
 
-}
+}*/
 
 .contact-list .social-net li {
     display: inline;
-    padding-left: 20px;
 }
 
 .contact-list .social-net li a{
     display: inline;
-    padding: 15px;
+    padding: 5px;
+    cursor: pointer;
 }
 
 .contact-list .social-net li a img {
     left: 0;
+    width:30px;
+    height: 30px;
 }
 /* ======= END OF KONTAKT ======*/
 
@@ -1102,6 +1143,11 @@ pre {
         text-align: center;
     }
 
+    /* =====  KONTAKT ====== */ 
+    .contact-list {
+        flex-direction: row;
+    }
+
     /* ====== FOOTER ====== */
     footer p {
         top: 30px;
@@ -1112,11 +1158,6 @@ pre {
         position: absolute;
         margin: 0;
         right: 50px;
-    }
-
-    .brake:after {
-        content: "500px";
-        background-color: red;
     }
 }
 
