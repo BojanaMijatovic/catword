@@ -25,11 +25,12 @@ makeExpandingArea(areas[l]);
 $('.burger').on('click', function(event) {
   event.preventDefault();
   $('.nav').css('display', 'table');
+  $('.nav').css('transform', 'translate3d(0, 0, 0)');
   $('.burger').css('display','none');
 });
 $('.nav .close, .nav a').on('click', function(event) {
   event.preventDefault();
-  $('.nav').css('display', 'none');
+  $('.nav').css('transform', 'translate3d(150%, 0, 0)');
   $('.burger').css('display','block');
 });
 

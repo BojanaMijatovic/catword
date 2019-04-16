@@ -230,7 +230,7 @@ header .container {
 }
 
 nav {
-    display: none;
+   /* display: none;*/
     position: fixed;
     top: 0;
     left: 25%;
@@ -240,7 +240,8 @@ nav {
     text-align: center;
     color: #fff;
     opacity: 0.9;
-    transition: all .5s;
+    transition: all .5s ease-in;
+    transform: translate3d(150%, 0, 0);
 }
 
 nav ul {
@@ -295,6 +296,7 @@ nav a {
     padding: 5px 0;
     float: right;
     margin-top: 5px;
+    transition: all 0.5s ease-in;
 }
 
 .burger span {
@@ -1118,13 +1120,6 @@ pre {
 
 /* ====== MEDIA QUERIES ====== */
 
-@media only screen and (min-width: 400px) {
-    .brake:after {
-        content: "400px";
-        background-color: red;
-    }
-}
-
 @media only screen and (min-width: 520px) {
     .hero-left {
     padding-bottom: 250px;
@@ -1320,11 +1315,6 @@ pre {
     .input-file  {
         width: calc(100% - 22px);
         margin-left: 10px;
-    }
-
-    .brake:after {
-        content: "768px";
-        background-color: red;
     }
     
 }
