@@ -369,7 +369,8 @@ nav a {
 }
 .services h2::after,
 .text-right h2::after,
-.price h2:after {
+.price h2:after,
+.contact h2:after {
     content: '';
     display: block;
     width: 110px;
@@ -832,16 +833,23 @@ nav a {
 }
 
 .contact-list li p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: left;
-    padding-left: 27%;
     margin-top: 0;
 }
 
 .contact-list li::before {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 10px;
+    left: 20px;
 
+}
+
+.contact-list .contact_2 p {
+    transform: translate(-25%, -70%);
 }
 
 .contact_1::before {
@@ -854,39 +862,9 @@ nav a {
     content: url(../img/icon3.png);
 }
 
-/*.contact li {
-    display: inline-block;
-    padding: 0 10px 10px;
-    margin: auto;
-    min-width: 300px;
-    max-width: 300px;
+.social-net {
+    text-align: center;
 }
-
-.contact li:nth-child(4){
-    text-align: left;
-}
-
-.contact-list {
-    margin: 0 auto;
-}
-.contact-list li {
-    display: inline-block;
-    position: relative;
-    margin: 10px auto;
-    height: 80px;
-    padding-left: 70px;
-    padding-bottom: 50px;
-    overflow: hidden;
-}
-
-.contact-list li img {
-    display: block;
-    float: left;
-    position: absolute;
-    top: 0;
-    left: 20px;
-
-}*/
 
 .contact-list .social-net li {
     display: inline;
@@ -1142,6 +1120,10 @@ pre {
     .contact-list {
         flex-direction: row;
     }
+    .social-net {
+    text-align: left;
+    padding-left: 15px;
+}
 
     /* ====== FOOTER ====== */
     footer p {
@@ -1371,10 +1353,6 @@ pre {
     .contact-list {
         justify-content: center;
     }
-    .brake:after {
-        content: "992px";
-        background-color: red;
-    }
 
 }
 
@@ -1460,10 +1438,6 @@ pre {
 
     .contact-list {
         padding-top: 50px;
-    }
-    .brake:after {
-        content: "1024px";
-        background-color: red;
     }
 }
 
