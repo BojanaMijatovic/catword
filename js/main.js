@@ -131,3 +131,17 @@ $(window).on("load", function() {
     nextText: ""
   });
 });
+
+
+//READ MORE BUTTON 
+$('.accordion').on('click', function(){
+  if ($('.dots').css('display') === 'none')  {
+    $('.dots').css('display', 'inline');
+    $('.accordion').html('Čitajte dalje');
+    $('.hidden-text').css('display', 'none');
+  } else {
+    $('.dots').css('display', 'none');
+    $('.accordion').html('Čitajte manje');
+    $('.hidden-text').css('display', 'inline');
+  }
+});
